@@ -6,6 +6,16 @@ import org.junit.Test;
 public class MCLanguageTest extends TestSuite {
 
     @Test
+    public void testHelloWorld() {
+        String code =
+                "void main() {\n" +
+                "  printf(\"Hello World!\");\n" +
+                "}";
+        executeCode(code);
+        Assert.assertEquals("Hello World!\n", out.toString());
+    }
+
+    @Test
     public void testAdd() {
         String code =
                 "void main() {\n" +

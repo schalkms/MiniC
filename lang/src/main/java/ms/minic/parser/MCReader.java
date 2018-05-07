@@ -3,18 +3,12 @@ package ms.minic.parser;
 import ms.minic.MCLanguage;
 import com.oracle.truffle.api.frame.FrameDescriptor;
 import com.oracle.truffle.api.source.Source;
+import ms.minic.nodes.*;
 import ms.minic.nodes.arithmetic.MCAddNode;
 import ms.minic.nodes.arithmetic.MCDivNode;
 import ms.minic.nodes.arithmetic.MCMulNode;
 import ms.minic.nodes.arithmetic.MCSubNode;
 import ms.minic.nodes.arithmetic.MCParenExpressionNode;
-import ms.minic.nodes.MCAssignNode;
-import ms.minic.nodes.MCExpressionNode;
-import ms.minic.nodes.MCIntNode;
-import ms.minic.nodes.MCNode;
-import ms.minic.nodes.MCPrintNode;
-import ms.minic.nodes.MCRootNode;
-import ms.minic.nodes.MCSymbolNode;
 import ms.minic.parser.generated.MiniCBaseVisitor;
 import ms.minic.parser.generated.MiniCLexer;
 import ms.minic.parser.generated.MiniCParser;
@@ -79,8 +73,16 @@ public class MCReader extends MiniCBaseVisitor<MCNode> {
 
     @Override
     public MCNode visitPrint(MiniCParser.PrintContext ctx) {
-        MCExpressionNode exprNode = (MCExpressionNode) visit(ctx.expr());
-        nodes.add(new MCPrintNode(exprNode));
+        MCNode printNode = null;
+        if (ctx.expr() != null) {
+            MCExpressionNode exprNode = (MCExpressionNode) visit(ctx.expr());
+            printNode = new MCPrintNode(exprNode);
+        } else if (ctx.STRING() != null) {
+            String text = ctx.STRING().getText();
+            text = text.substring(1, text.length() - 1);
+            printNode = new MCPrintStringNode(text);
+        }
+        nodes.add(printNode);
         return super.visitPrint(ctx);
     }
 

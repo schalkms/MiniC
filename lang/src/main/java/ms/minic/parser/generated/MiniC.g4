@@ -11,7 +11,7 @@ statSeq : stat* ;
 
 stat : (assign | print)? ';' ;
 assign : IDENT '=' expr ;
-print : 'printf' '(' expr ')' ;
+print : 'printf' '(' (STRING | expr) ')' ;
 
 expr: expr op=('*'|'/') expr # MulDiv
     | expr op=('+'|'-') expr # AddSub
@@ -21,6 +21,7 @@ expr: expr op=('*'|'/') expr # MulDiv
     ;
 
 IDENT : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')* ;
+STRING : '"' ( ~'"' | '\\' '"')* '"' ;
 NUMBER : [0-9]+ ;
 ADD: '+' ;
 SUB: '-' ;
