@@ -4,7 +4,13 @@ var app = express();
 
 app.get('/', function (req, res) {
   Polyglot.eval('minic', `void main() {
-                            printf("Hello World from MiniC!");
+                              int a, b, cs;
+                              a = 3;
+                              b = 4;
+                              printf("Hello World from MiniC!");
+                              cs = (a * a) + (b * b);
+                              printf("SVP:");
+                              printf(cs);
                           }`);
   res.send('Hello World from NodeJS!');
 });
