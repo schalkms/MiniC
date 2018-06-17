@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-VERSION="1.0.0-rc1"
-LANGUAGE_PATH="./lang/target/mc-1.0-SNAPSHOT-jar-with-dependencies.jar"
+VERSION="1.0.0-rc2"
+LANGUAGE_PATH="./lang/target/mc-1.0-SNAPSHOT.jar"
 LAUNCHER_PATH="./main/target/main-1.0-SNAPSHOT.jar"
 MAIN_CLASS="ms.minic.Main"
 

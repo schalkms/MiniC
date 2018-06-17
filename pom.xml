@@ -16,5 +16,6 @@
     <modules>
         <module>lang</module>
         <module>main</module>
+        <module>component</module>
     </modules>
 </project>
