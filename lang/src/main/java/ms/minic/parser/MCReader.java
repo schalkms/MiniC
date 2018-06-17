@@ -12,13 +12,14 @@ import ms.minic.nodes.arithmetic.MCParenExpressionNode;
 import ms.minic.parser.generated.MiniCBaseVisitor;
 import ms.minic.parser.generated.MiniCLexer;
 import ms.minic.parser.generated.MiniCParser;
-import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -39,8 +40,7 @@ public class MCReader extends MiniCBaseVisitor<MCNode> {
     }
 
     private ParseTree createParseTree() throws IOException {
-        InputStream inputStream = source.getInputStream();
-        ANTLRInputStream stream = new ANTLRInputStream(inputStream);
+        CharStream stream = CharStreams.fromStream(source.getInputStream(), StandardCharsets.UTF_8);
         MiniCLexer lexer = new MiniCLexer(stream);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MiniCParser parser = new MiniCParser(tokens);

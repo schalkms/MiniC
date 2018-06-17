@@ -1,4 +1,4 @@
-// Generated from MiniC.g4 by ANTLR 4.5.1
+// Generated from ../Documents/MiniC/lang/src/main/java/ms/minic/parser/generated/MiniC.g4 by ANTLR 4.7.1
 
     package ms.minic.parser.generated;
 

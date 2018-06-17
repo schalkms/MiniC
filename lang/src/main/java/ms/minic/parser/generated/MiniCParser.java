@@ -1,4 +1,4 @@
-// Generated from MiniC.g4 by ANTLR 4.5.1
+// Generated from ../Documents/MiniC/lang/src/main/java/ms/minic/parser/generated/MiniC.g4 by ANTLR 4.7.1
 
     package ms.minic.parser.generated;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MiniCParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -122,6 +122,7 @@ public class MiniCParser extends Parser {
 			setState(18);
 			match(T__4);
 			setState(20);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__6) {
 				{
@@ -282,6 +283,7 @@ public class MiniCParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(44);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case IDENT:
 				{
@@ -298,7 +300,7 @@ public class MiniCParser extends Parser {
 			case T__8:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
 			setState(46);
 			match(T__8);
@@ -383,6 +385,7 @@ public class MiniCParser extends Parser {
 			setState(53);
 			match(T__2);
 			setState(56);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case STRING:
 				{
@@ -504,6 +507,7 @@ public class MiniCParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(67);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NUMBER:
 				{
@@ -550,6 +554,7 @@ public class MiniCParser extends Parser {
 					_prevctx = _localctx;
 					{
 					setState(75);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 					case 1:
 						{
@@ -562,7 +567,10 @@ public class MiniCParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==MUL || _la==DIV) ) {
 							((MulDivContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(71);
@@ -580,7 +588,10 @@ public class MiniCParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
 							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(74);
@@ -625,21 +636,21 @@ public class MiniCParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\25S\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25S\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\3\2\3\2\3\2\3\2\5\2"+
 		"\27\n\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\7\3 \n\3\f\3\16\3#\13\3\3\3\3\3\3"+
 		"\4\7\4(\n\4\f\4\16\4+\13\4\3\5\3\5\5\5/\n\5\3\5\3\5\3\6\3\6\3\6\3\6\3"+
 		"\7\3\7\3\7\3\7\5\7;\n\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\bF\n\b\3"+
 		"\b\3\b\3\b\3\b\3\b\3\b\7\bN\n\b\f\b\16\bQ\13\b\3\b\2\3\16\t\2\4\6\b\n"+
-		"\f\16\2\4\3\2\23\24\3\2\21\22U\2\20\3\2\2\2\4\33\3\2\2\2\6)\3\2\2\2\b"+
-		".\3\2\2\2\n\62\3\2\2\2\f\66\3\2\2\2\16E\3\2\2\2\20\21\7\3\2\2\21\22\7"+
-		"\4\2\2\22\23\7\5\2\2\23\24\7\6\2\2\24\26\7\7\2\2\25\27\5\4\3\2\26\25\3"+
-		"\2\2\2\26\27\3\2\2\2\27\30\3\2\2\2\30\31\5\6\4\2\31\32\7\b\2\2\32\3\3"+
-		"\2\2\2\33\34\7\t\2\2\34!\7\16\2\2\35\36\7\n\2\2\36 \7\16\2\2\37\35\3\2"+
-		"\2\2 #\3\2\2\2!\37\3\2\2\2!\"\3\2\2\2\"$\3\2\2\2#!\3\2\2\2$%\7\13\2\2"+
-		"%\5\3\2\2\2&(\5\b\5\2\'&\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\7\3\2"+
-		"\2\2+)\3\2\2\2,/\5\n\6\2-/\5\f\7\2.,\3\2\2\2.-\3\2\2\2./\3\2\2\2/\60\3"+
-		"\2\2\2\60\61\7\13\2\2\61\t\3\2\2\2\62\63\7\16\2\2\63\64\7\f\2\2\64\65"+
+		"\f\16\2\4\3\2\23\24\3\2\21\22\2U\2\20\3\2\2\2\4\33\3\2\2\2\6)\3\2\2\2"+
+		"\b.\3\2\2\2\n\62\3\2\2\2\f\66\3\2\2\2\16E\3\2\2\2\20\21\7\3\2\2\21\22"+
+		"\7\4\2\2\22\23\7\5\2\2\23\24\7\6\2\2\24\26\7\7\2\2\25\27\5\4\3\2\26\25"+
+		"\3\2\2\2\26\27\3\2\2\2\27\30\3\2\2\2\30\31\5\6\4\2\31\32\7\b\2\2\32\3"+
+		"\3\2\2\2\33\34\7\t\2\2\34!\7\16\2\2\35\36\7\n\2\2\36 \7\16\2\2\37\35\3"+
+		"\2\2\2 #\3\2\2\2!\37\3\2\2\2!\"\3\2\2\2\"$\3\2\2\2#!\3\2\2\2$%\7\13\2"+
+		"\2%\5\3\2\2\2&(\5\b\5\2\'&\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\7\3"+
+		"\2\2\2+)\3\2\2\2,/\5\n\6\2-/\5\f\7\2.,\3\2\2\2.-\3\2\2\2./\3\2\2\2/\60"+
+		"\3\2\2\2\60\61\7\13\2\2\61\t\3\2\2\2\62\63\7\16\2\2\63\64\7\f\2\2\64\65"+
 		"\5\16\b\2\65\13\3\2\2\2\66\67\7\r\2\2\67:\7\5\2\28;\7\17\2\29;\5\16\b"+
 		"\2:8\3\2\2\2:9\3\2\2\2;<\3\2\2\2<=\7\6\2\2=\r\3\2\2\2>?\b\b\1\2?F\7\20"+
 		"\2\2@F\7\16\2\2AB\7\5\2\2BC\5\16\b\2CD\7\6\2\2DF\3\2\2\2E>\3\2\2\2E@\3"+
