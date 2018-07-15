@@ -18,15 +18,28 @@ MiniC is a very basic programming language using the Truffle DSL for the GraalVM
 ## Install MiniC into GraalVM
 
 MiniC can be installed into GraalVM with the following commands.
-`examples/mini-server.js` shows an example which combines JavaScript and MiniC.
 
 ```shell
 mvn package
 <<graalvm-path>>/bin/gu -F install <<MiniC-clone>>/component/mc-component.jar
-
-<<graalvm-path>>/bin/node --polyglot --jvm examples/mini-server.js
 ```
 
+### Combining C and MiniC
+
+`examples/hello-minic.c` shows an example which combines C and MiniC.
+
+```shell
+clang -g -O1 -c -emit-llvm -I<<graalvm-path>>/jre/languages/llvm examples/hello-minic.c
+./<<graalvm-path>>/bin/lli --polyglot --jvm hello-minic.bc
+```
+
+### Combining JavaScript and MiniC
+
+`examples/mini-server.js` shows an example which combines JavaScript and MiniC.
+
+```shell
+<<graalvm-path>>/bin/node --polyglot --jvm examples/mini-server.js
+```
 
 ## License
 
