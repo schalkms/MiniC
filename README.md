@@ -41,6 +41,8 @@ clang -g -O1 -c -emit-llvm -I<<graalvm-path>>/jre/languages/llvm examples/hello-
 <<graalvm-path>>/bin/node --polyglot --jvm examples/mini-server.js
 ```
 
+![node-minic](doc/node-minic.png)
+
 ## License
 
 GNU General Public License v3.0
